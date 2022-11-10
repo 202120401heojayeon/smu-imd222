@@ -58,7 +58,7 @@ function setup() {
 
   // add damped soft global constraint
   //도형 위치, 크기, 폴리건수
-  let body1 = new P5Polygon(500, 200, 7, 40);
+  let body1 = new P5Polygon(400, 290, 3, 60);
   matterBodies.push(body1);
   let constraint1 = new P5Constraint({
     pointA: { x: 400, y: 290 },

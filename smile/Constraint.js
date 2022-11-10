@@ -3,7 +3,7 @@ class P5Constraint {
     this.constraint = Matter.Constraint.create(options);
     Matter.Composite.add(engine.world, this.constraint);
     // 줄 색
-    this.color = "#ffffff";
+    this.color = "#FFFFFF";
   }
   getConstraint() {
     return this.constraint;
@@ -17,7 +17,7 @@ class P5Constraint {
     let pointBWorld = Matter.Constraint.pointBWorld(this.constraint);
     if (this.color !== null) {
       //줄두께
-      strokeWeight(1);
+      strokeWeight(3);
       stroke(this.color);
     } else noStroke();
     line(pointAWorld.x, pointAWorld.y, pointBWorld.x, pointBWorld.y);
@@ -27,6 +27,6 @@ class P5Constraint {
       // 줄 연결 고리 두께
     } else noFill();
     circle(pointAWorld.x, pointAWorld.y, 0, 0);
-    circle(pointBWorld.x, pointBWorld.y, 0, 0);
+    circle(pointBWorld.x, pointBWorld.y, 20, 20);
   }
 }
