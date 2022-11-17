@@ -1,47 +1,23 @@
-let pegSize = 6;
-let ballRadius = 15;
-// let  Bodies = Matter.Bodies;
-// let Bodies = Matter.Bodies;
-let w = 800;
-let h = 750;
+let pegSize = 14;
+let ballRadius = 6;
+
+let w = 750;
+let h = 600;
 let countX = 10;
 let countY = 14;
-let walls = [];
 
 const { Bodies, Body, Composite, Engine, Events, World } = Matter;
 
 let canvas;
 let engine;
 
-function createWalls(thickness) {
-  //벽 길이, 벽 색상
-  let walls = [
-    new P5Rect(width * 0.5, 0, width, thickness, {
-      isStatic: true,
-    }).setStrokeColor("#f24444"),
-    new P5Rect(width * 0.5, height, width, thickness, {
-      isStatic: true,
-    }).setStrokeColor("#f23ff"),
-    new P5Rect(width, height * 0.5, thickness, height, {
-      isStatic: true,
-    }).setStrokeColor("#fffff"),
-    new P5Rect(0, height * 0.5, thickness, height, {
-      isStatic: true,
-    }).setStrokeColor("#fffff"),
-  ];
-  walls.forEach((wall) => matterBodies.push(wall));
-  return walls;
-}
-
 function setup() {
-  //   walls = createWalls(50);
-
   engine = Engine.create();
   Engine.run(engine);
 
   Events.on(engine, "collisionStart", collisionStart);
 
-  canvas = createCanvas(700, 600);
+  canvas = createCanvas(windowWidth, windowHeight);
 
   let offsetX = (0.5 / countX) * w;
   let offsetY = (0.5 / countY) * h + 50;
@@ -76,9 +52,9 @@ function addCircle({ x = 0, y = 0, r = 10, options = {} } = {}) {
 }
 
 function draw() {
-  background(150);
+  background(0);
 
-  if (!(frameCount % 20)) {
+  if (!(frameCount % 40)) {
     addCircle({
       x: random(w * 0.1, w * 0.9),
       y: -10,
@@ -91,13 +67,13 @@ function draw() {
     });
   }
 
-  translate(width / 10 - w / 5, 0);
+  translate(width / 2 - w / 2, 0);
 
   let bodies = Composite.allBodies(engine.world);
 
-  //   fill(100);
-  //   noStroke();
-  //   text(`${bodies.filter((n) => !n.isStatic).length} (${bodies.length})`, 4, 20);
+  fill(255);
+  noStroke();
+  text(`${bodies.filter((n) => !n.isStatic).length} (${bodies.length})`, 4, 20);
 
   bodies.forEach((n, i) => {
     let render = n.render;
@@ -130,9 +106,9 @@ function draw() {
   });
 }
 
-// function windowResized() {
-//   resizeCanvas(windowWidth, windowHeight);
-// }
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
 
 function collisionStart({ pairs }, timestamp, source, name) {
   // { activeContacts, bodyA, bodyB, collision, contacts,
