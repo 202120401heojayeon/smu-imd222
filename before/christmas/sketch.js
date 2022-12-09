@@ -3,7 +3,7 @@ var drawMode = 1;
 var img;
 
 function preload() {
-  img = loadImage("data/pic.jpg");
+  img = loadImage("lastchristmas.jpg");
 }
 
 function setup() {
@@ -19,30 +19,23 @@ function draw() {
 
   for (var gridX = 0; gridX < img.width; gridX++) {
     for (var gridY = 0; gridY < img.height; gridY++) {
-      // grid position + tile size
       var tileWidth = width / img.width;
       var tileHeight = height / img.height;
       var posX = tileWidth * gridX;
       var posY = tileHeight * gridY;
-
-      // get current color
       img.loadPixels();
       var c = color(img.get(gridX, gridY));
-      // greyscale conversion
       var greyscale = round(
         red(c) * 0.222 + green(c) * 0.707 + blue(c) * 0.071
       );
-
       switch (drawMode) {
         case 1:
-          // greyscale to stroke weight
           var w1 = map(greyscale, 0, 255, 15, 0.1);
           stroke(0);
           strokeWeight(w1 * mouseXFactor);
           line(posX, posY, posX + 5, posY + 5);
           break;
         case 2:
-          // greyscale to ellipse area
           fill(0);
           noStroke();
           var r2 = 1.1284 * sqrt(tileWidth * tileWidth * (1 - greyscale / 255));
@@ -50,7 +43,6 @@ function draw() {
           ellipse(posX, posY, r2, r2);
           break;
         case 3:
-          // greyscale to line length
           var l3 = map(greyscale, 0, 255, 30, 0.1);
           l3 *= mouseXFactor;
           stroke(0);
@@ -58,7 +50,6 @@ function draw() {
           line(posX, posY, posX + l3, posY + l3);
           break;
         case 4:
-          // greyscale to rotation, line length and stroke weight
           stroke(0);
           var w4 = map(greyscale, 0, 255, 10, 0);
           strokeWeight(w4 * mouseXFactor + 0.1);
@@ -71,10 +62,9 @@ function draw() {
           pop();
           break;
         case 5:
-          // greyscale to line relief
           var w5 = map(greyscale, 0, 255, 5, 0.2);
           strokeWeight(w5 * mouseYFactor + 0.1);
-          // get neighbour pixel, limit it to image width
+
           var c2 = color(img.get(min(gridX + 1, img.width - 1), gridY));
           stroke(c2);
           var greyscale2 = floor(
@@ -86,7 +76,6 @@ function draw() {
           line(posX - d1, posY + d1, posX + tileWidth - d2, posY + d2);
           break;
         case 6:
-          // pixel color to fill, greyscale to ellipse size
           var w6 = map(greyscale, 0, 255, 25, 0);
           noStroke();
           fill(c);
@@ -133,7 +122,6 @@ function draw() {
 function keyReleased() {
   if (key == "s" || key == "S") saveCanvas(gd.timestamp(), "jpg");
 
-  // change draw mode
   if (key == "1") drawMode = 1;
   if (key == "2") drawMode = 2;
   if (key == "3") drawMode = 3;
