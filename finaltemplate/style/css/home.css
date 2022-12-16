@@ -5,6 +5,10 @@
   font-weight: Pretendard;
 }
 
+body {
+  background-color: black;
+}
+
 .container {
   padding-block: 3.5rem;
   padding-inline: 1rem;
