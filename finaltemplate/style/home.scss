@@ -58,9 +58,9 @@
 
 @for $idx from 1 through 9 {
   #grid_item_#{$idx} {
-    background-image: url(../../works/work#{$idx}/thumb.png);
+    background-image: url(../../works/work#{$idx}/thumb.jpg);
   }
   #grid_item_#{$idx}:hover {
-    background-image: url(../../works/work#{$idx}/thumb_hover.png);
+    background-image: url(../../works/work#{$idx}/thumb_hover.jpg);
   }
 }

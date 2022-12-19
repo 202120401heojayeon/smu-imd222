@@ -9,7 +9,7 @@ let yyy = 0;
 let img;
 
 function preload() {
-  img = loadImage("./images/lastchristmas.jpg");
+  img = loadImage("./images/lastchristmas.png");
 }
 
 function setup() {

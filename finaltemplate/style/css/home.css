@@ -61,73 +61,73 @@ body {
 }
 
 #grid_item_1 {
-  background-image: url(../../works/work1/thumb.png);
+  background-image: url(../../works/work1/thumb1.png);
 }
 
 #grid_item_1:hover {
-  background-image: url(../../works/work1/thumb_hover.png);
+  background-image: url(../../works/work1/thumb_hover1.png);
 }
 
 #grid_item_2 {
-  background-image: url(../../works/work2/thumb.jpg);
+  background-image: url(../../works/work2/thumb2.png);
 }
 
 #grid_item_2:hover {
-  background-image: url(../../works/work2/thumb_hover.jpg);
+  background-image: url(../../works/work2/thumb_hover2.png);
 }
 
 #grid_item_3 {
-  background-image: url(../../works/work3/thumb.jpg);
+  background-image: url(../../works/work3/thumb3.png);
 }
 
 #grid_item_3:hover {
-  background-image: url(../../works/work3/thumb_hover.jpg);
+  background-image: url(../../works/work3/thumb_hover3.png);
 }
 
 #grid_item_4 {
-  background-image: url(../../works/work4/thumb.jpg);
+  background-image: url(../../works/work4/thumb4.png);
 }
 
 #grid_item_4:hover {
-  background-image: url(../../works/work4/thumb_hover.jpg);
+  background-image: url(../../works/work4/thumb_hover4.png);
 }
 
 #grid_item_5 {
-  background-image: url(../../works/work5/thumb.jpg);
+  background-image: url(../../works/work5/thumb5.png);
 }
 
 #grid_item_5:hover {
-  background-image: url(../../works/work5/thumb_hover.jpg);
+  background-image: url(../../works/work5/thumb_hover5.png);
 }
 
 #grid_item_6 {
-  background-image: url(../../works/work6/thumb.jpg);
+  background-image: url(../../works/work6/thumb6.png);
 }
 
 #grid_item_6:hover {
-  background-image: url(../../works/work6/thumb_hover.jpg);
+  background-image: url(../../works/work6/thumb_hover6.png);
 }
 
 #grid_item_7 {
-  background-image: url(../../works/work7/thumb.jpg);
+  background-image: url(../../works/work7/thumb7.png);
 }
 
 #grid_item_7:hover {
-  background-image: url(../../works/work7/thumb_hover.jpg);
+  background-image: url(../../works/work7/thumb_hover7.png);
 }
 
 #grid_item_8 {
-  background-image: url(../../works/work8/thumb.jpg);
+  background-image: url(../../works/work8/thumb8.png);
 }
 
 #grid_item_8:hover {
-  background-image: url(../../works/work8/thumb_hover.jpg);
+  background-image: url(../../works/work8/thumb_hover8.png);
 }
 
 #grid_item_9 {
-  background-image: url(../../works/work9/thumb.jpg);
+  background-image: url(../../works/work9/thumb9.png);
 }
 
 #grid_item_9:hover {
-  background-image: url(../../works/work9/thumb_hover.jpg);
+  background-image: url(../../works/work9/thumb_hover9.png);
 }
