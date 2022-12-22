@@ -18,7 +18,7 @@ function setup() {
     .getBoundingClientRect();
   let canvas = createCanvas(boundingRects.width, boundingRects.height);
   canvas.parent("p5Canvas");
-  background(100);
+  background(255);
 }
 
 function horizontal() {
