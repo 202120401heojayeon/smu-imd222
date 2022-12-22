@@ -17,7 +17,7 @@ function setup() {
 }
 
 function draw() {
-  background(60);
+  background(80);
 
   for (let b of balls) {
     b.display();
